@@ -1,0 +1,39 @@
+{
+  "name": "mongo-feed",
+  "description": "Generic feed-like service that uses mongo and provides a post/recent api",
+  "homepage": "https://github.com/ogt/mongo-feed",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ogt/mongo-feed.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "pretest": "mongo mongo_feed_test --eval 'db.dropDatabase()'",
+    "test": "tap test/*.js",
+    "posttest": "mongo mongo_feed_test --eval 'db.dropDatabase()'"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "mongo-sequence": "~0.1.4"
+  },
+  "devDependencies": {
+    "mongojs": "~0.10.0",
+    "glutils": "~0.2.0",
+    "tap": "~0.4.8"
+  },
+  "keywords": [
+    "feed",
+    "json",
+    "recent",
+    "pubsub",
+    "atom",
+    "mongo",
+    "queue"
+  ],
+  "author": {
+    "name": "Odysseas Tsatalos",
+    "email": "odysseas@tsatalos.com",
+    "url": "http://tsatalos.gr"
+  }
+}
