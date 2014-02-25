@@ -1,4 +1,5 @@
 Generic feed-like service that uses mongo and provides a post/recent api
+
 [![Build Status](https://travis-ci.org/ogt/mongo-feed.png)](https://travis-ci.org/ogt/mongo-feed)
 
 ## Description
