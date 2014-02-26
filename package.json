@@ -2,7 +2,7 @@
   "name": "mongo-feed",
   "description": "Generic feed-like service that uses mongo and provides a post/recent api",
   "homepage": "https://github.com/ogt/mongo-feed",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "repository": {
     "type": "git",
     "url": "git://github.com/ogt/mongo-feed.git"
