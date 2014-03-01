@@ -13,7 +13,7 @@ module.exports = function(db,name) {
     seq.getNext(function(err,counter) {
       if (!err) {
         var dd = new Date();
-        collection.insert(_.merge(_.rename(obj,{_id : '_id_source'}),
+        collection.insert(_.merge(_.rename(obj,{_id : '_feed_original_id'}),
           {
             _feed_seq_no : counter,
             _feed_posted_on : dd.toJSON()
@@ -33,7 +33,7 @@ module.exports = function(db,name) {
     collection.find(criterion).limit(n).sort({_feed_seq_no : -1}, function(err,items) {
       if (err) { cb(err);}
       else {
-        cb(null,items.map(function(el){return _.omit(el,'_id'); }));
+        cb(null,items.map(function(el){return _.rename(_.omit(el,'_id'),{_feed_original_id:'_id'}); }));
       }
     });
   }
