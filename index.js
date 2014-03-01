@@ -13,7 +13,7 @@ module.exports = function(db,name) {
     seq.getNext(function(err,counter) {
       if (!err) {
         var dd = new Date();
-        collection.insert(_.merge(obj,
+        collection.insert(_.merge(_.rename(obj,{_id : '_id_source'}),
           {
             _feed_seq_no : counter,
             _feed_posted_on : dd.toJSON()

@@ -8,7 +8,7 @@ test('simple test - check bounding conditions for page size', function (t) {
     var feed = mongoFeed(db,'events');
     t.plan(4);
     for (var i=0;i<4;i++) {
-      _.p(feed.post({what: 'something happened : ('+i+')', who: 'odysseas'+i},_.p()));
+      _.p(feed.post({what: 'something happened : "'+i+'"', who: 'odysseas'+i},_.p()));
     }
     t.equal(_.p(feed.recent(1,0,_.p())).length,1);
     t.equal(_.p(feed.recent(2,0,_.p())).length,2);
@@ -23,7 +23,7 @@ test('long test - check bounding conditions for page size', function (t) {
     var feed = mongoFeed(db,'events1');
     t.plan(6);
     for (var i=0;i<200;i++) {
-      _.p(feed.post({where: 'something new happened : ('+i+')', which: 'john'+i},_.p()));
+      _.p(feed.post({where: 'something new happened : "'+i+'"', which: 'john'+i},_.p()));
     }
     t.equal(_.p(feed.recent(1,0,_.p())).length,1);
     t.equal(_.p(feed.recent(2,0,_.p())).length,2);
@@ -41,7 +41,7 @@ test('test bounding conditions for sequence number parameter', function (t) {
     t.plan(10);
     var from = Date.now();
     for (var i=0;i<200;i++) {
-      _.p(feed.post({whats: 'something else happened : ('+i+')', who: 'michael'+i},_.p()));
+      _.p(feed.post({whats: 'something else happened : "'+i+'"', who: 'michael'+i},_.p()));
     }
     var items = _.p(feed.recent(10,0,_.p()));
     t.equal(items[0]._feed_seq_no,200);
