@@ -76,7 +76,6 @@ test('test that the objects posted is the same as the object returned with excep
     _.p(feed.post(obj2,_.p()));
     var objs = _.p(feed.recent(10,0,_.p()));
     t.equal(objs.length,2);
-    console.log(objs);
     t.ok(_.deepEquals(obj2,_.omit(objs[0],'_feed_posted_on','_feed_seq_no')));
     t.ok(_.deepEquals(obj1,_.omit(objs[1],'_feed_posted_on','_feed_seq_no')));
     t.end();
