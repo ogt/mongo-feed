@@ -5,7 +5,7 @@ Minimalist feed service using mongo
 ## Description
 ```
 var mongoFeed = require('mongo-feed');
-var feed = new MongoFeed('db,'Test Feed');
+var feed = new MongoFeed('db','Test Feed');
 feed.post({a:1,b:2},cb);
 // later...
 feed.post({x:11,z:22},cb);
